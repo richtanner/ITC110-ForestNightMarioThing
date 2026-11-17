@@ -71,8 +71,9 @@ public class KnightPlayerController : MonoBehaviour
         if (isGrounded == true)
         {
             AudioSource.PlayClipAtPoint(jumpSound, transform.position);
-            Vector3 direction = new Vector3(Random.Range(-1f, 1f), Random.Range(0f, 1f)).normalized;
-            rb.AddForce(direction * jumpForce);
+            //Vector3 direction = new Vector3(Random.Range(-1f, 1f), Random.Range(0f, 1f)).normalized;
+            //rb.AddForce(direction * jumpForce);
+            rb.AddForce(transform.up * jumpForce);
             animator.SetBool("isJumping", true);
         }
     }
